@@ -1,0 +1,52 @@
+---
+import {SEO} from "astro-seo";
+
+const GA4MeasurementId = "G-YOUR_MEASUREMENT_ID";
+
+interface Props {
+  seoTitle?: string;
+  seoDescription?: string;
+}
+
+const {seoTitle, seoDescription} = Astro.props;
+---
+
+<html lang="en" class="scroll-smooth">
+  <head>
+    <SEO
+      title={seoTitle ? seoTitle : "This is your landing page SEO title"}
+      description={seoDescription
+        ? seoDescription
+        : "This is your landing page SEO description"}
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style is:global>
+      /* CSS Fonts here */
+
+      /* Improve Page speed */
+      /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
+      img {
+        content-visibility: auto;
+      }
+    </style>
+    <script
+      async
+      src=`https://www.googletagmanager.com/gtag/js?id=${GA4MeasurementId}`
+      is:inline></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", `${GA4MeasurementId}`);
+    </script>
+  </head><body class="relative">
+    <slot />
+  </body>
+</html>
