@@ -9,8 +9,11 @@ export default {
 			},
 			colors: {
 				"vushOrange": "#ffc696",
+				"vushOrangeDark": "#ff9e5b",
 				"vushYellow": "#ede891",
+				"vushYellowDark": "#e5d05b",
 				"vushGreen": "#c9e89b",
+				"vushGreenDark": "#a3d05b",
 				"vushBlack": "#373737",
 			}
 		},
