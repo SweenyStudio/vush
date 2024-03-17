@@ -1,6 +1,6 @@
 ---
 import {SEO} from "astro-seo";
-
+import Navbar from "@components/sections/navbar.astro";
 const GA4MeasurementId = "G-YOUR_MEASUREMENT_ID";
 
 interface Props {
@@ -26,13 +26,31 @@ const {seoTitle, seoDescription} = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style is:global>
       /* CSS Fonts here */
-
+      @font-face {
+        font-family: "Clearface";
+        src: url("/fonts/ClearfaceStd-Regular.woff2") format("woff2");
+        font-weight: 400;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "Karla";
+        src: url("fonts/Karla-VariableFont_wght.ttf") format("truetype");
+        font-weight: 100 900;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "Karla";
+        src: url("fonts/Karla-Italic-VariableFont_wght.ttf") format("truetype");
+        font-weight: 100 900;
+        font-style: italic;
+      }
       /* Improve Page speed */
       /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
       img {
         content-visibility: auto;
       }
     </style>
+
     <script
       async
       src=`https://www.googletagmanager.com/gtag/js?id=${GA4MeasurementId}`
@@ -46,7 +64,7 @@ const {seoTitle, seoDescription} = Astro.props;
 
       gtag("config", `${GA4MeasurementId}`);
     </script>
-  </head><body class="relative">
+  </head><body class="relative overscroll-none font-karla">
     <slot />
   </body>
 </html>

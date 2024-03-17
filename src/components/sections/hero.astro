@@ -1,0 +1,47 @@
+---
+import {Image} from "astro:assets";
+import Scratchy from "@assets/scratch.webp";
+import Container from "@components/ui/container.astro";
+import Link from "@components/ui/link.astro";
+---
+
+<video
+  src="https://sweenystudio.app/Couples%20Cards_3.mp4"
+  preload="none"
+  autoplay
+  loop
+  muted
+  playsinline
+  class="object-cover h-96 w-full object-center"></video>
+<Container>
+  <div class="flex flex-col justify-center items-center text-center mt-8">
+    <h1 class="text-3xl font-clearface">
+      Build a <span class="underline underline-offset-4">Stronger </span> Relationship
+      with your Partner
+    </h1>
+    <p class="text-md mt-4">
+      Vush's Connection Challenges are a fun and easy way to build a stronger
+      relationship with your partner.
+    </p>
+    <Link
+      class="items-center flex w-full justify-center gap-x-2 group text-lg mt-4"
+      href="#product"
+      >Start Playing Today
+      <span
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-5 h-5 group-hover:translate-x-2 duration-300 translate-all"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"></path>
+        </svg>
+      </span>
+    </Link>
+  </div>
+</Container>
