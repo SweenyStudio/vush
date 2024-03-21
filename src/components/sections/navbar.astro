@@ -1,25 +1,25 @@
 ---
 import Container from "@components/ui/container.astro";
-import {StickyHeader, Astronav, MenuIcon} from "astro-navbar";
+import {StickyHeader, Astronav} from "astro-navbar";
 import Link from "@components/ui/link.astro";
 import {Image} from "astro:assets";
 import HeaderLogo from "@assets/header-logo.webp";
 ---
 
 <StickyHeader
-  class="fixed w-full top-0 z-20 transition-all py-4"
+  class="fixed top-0 border-b z-20 transition-all w-full"
   scrollY={50}
-  defaultClass="border-transparent bg-transparent"
-  activeClass=" border-vushBlack border-b bg-white"
+  defaultClass="py-6 bg-transparent border-transparent"
+  activeClass="py-2 bg-white border-neutral-800 backdrop-blur-lg z-40"
   transition:persist
 >
   <Container>
     <div
-      class="flex flex-col lg:flex-row justify-between items-center relative z-10 w-full"
+      class="flex flex-col lg:flex-row justify-between items-center relative z-10"
     >
       <Astronav>
         <div class="flex w-full items-center justify-between">
-          <a>
+          <a href="/">
             <Image src={HeaderLogo} alt="Vush Logo" class="w-24 h-auto" />
           </a>
 

@@ -1,0 +1,29 @@
+---
+import Container from "@components/ui/container.astro";
+import {Image} from "astro:assets";
+import MainFeatureUGC from "@assets/CARD-UGC-05.webp";
+---
+
+<Container>
+  <div class="flex-col flex md:grid md:grid-cols-3 items-start md:gap-x-12">
+    <div class="flex flex-col justify-start items-start py-16 pr-10">
+      <h3 class="text-6xl font-medium tracking-tight font-clearface">
+        Ready To Level Up Your Relationship?
+      </h3>
+      <p class="mt-6 text-2xl">
+        Connection Challenges is designed to help you and your partner connect
+        on a deeper level, and have fun while doing it. It’s perfect for couples
+        who want to grow together, and build a relationship that lasts a
+        lifetime.
+      </p>
+
+      <p class="mt-6 text-2xl font-bold">
+        Simply, it's a way to build a stronger, healthier, more intimate
+        relationship.
+      </p>
+    </div>
+    <div class="col-span-2">
+      <Image src={MainFeatureUGC} alt="Connection Challenges" class="p-16" />
+    </div>
+  </div>
+</Container>
