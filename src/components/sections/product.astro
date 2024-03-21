@@ -1,0 +1,77 @@
+---
+import Container from "@components/ui/container.astro";
+import {Image} from "astro:assets";
+import BackgroundMobile from "@assets/How-To-Play-Mobile-04.webp";
+import BackgroundDesktop from "@assets/How-To-Play-Desktop-03.webp";
+import Link from "@components/ui/link.astro";
+---
+
+<section id="product" class="relative py-48">
+  <Image
+    class="absolute inset-0 w-full h-full object-cover object-center -z-10"
+    alt="Background"
+    src={BackgroundDesktop}
+  />
+  <Container>
+    <div class="grid grid-cols-2 gap-12">
+      <div class="col-start-2 pl-12 overflow-hidden relative">
+        <h3 class="text-6xl font-medium tracking-tight font-clearface">
+          Get Started With Your Connection Challenges
+        </h3>
+        <div
+          class="flex flex-row justify-between items-center mt-8 border-b border-neutral-400"
+        >
+          <div class="flex flex-col gap-y-1 py-4">
+            <p class="text-2xl">Connection Challenges Pack</p>
+            <p class="text-lg text-neutral-600">100 Couples Activity Cards</p>
+          </div>
+          <div class="flex flex-row items-center gap-x-4">
+            <p class="text-2xl opacity-40 line-through">$79.99</p>
+            <p class="text-2xl">$59.99</p>
+          </div>
+        </div>
+        <div
+          class="flex flex-row justify-between items-center border-b border-neutral-400"
+        >
+          <div class="flex flex-col gap-y-1 py-4">
+            <p class="text-2xl">Next-Day Delivery</p>
+            <p class="text-lg text-neutral-600">Express Shipping</p>
+          </div>
+          <div class="flex flex-row items-center gap-x-4">
+            <p class="text-2xl opacity-40 line-through">$29.99</p>
+            <p class="text-2xl">Free</p>
+          </div>
+        </div>
+        <div class="flex flex-row justify-between items-center mt-8">
+          <div class="flex flex-col gap-y-1 py-4">
+            <p class="text-2xl">Total</p>
+          </div>
+          <div class="flex flex-row items-center gap-x-4">
+            <p class="text-2xl opacity-40 line-through">$109.98</p>
+            <p class="text-2xl">$59.99</p>
+          </div>
+        </div>
+        <Link
+          class="items-center flex w-full justify-center gap-x-2 group text-lg mt-4 md:mt-12 md:px-18 md:text-xl md:py-5"
+          href="#product"
+          >Buy Connection Challenges Now!
+          <span
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-5 h-5 group-hover:translate-x-2 duration-300 translate-all"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"></path>
+            </svg>
+          </span>
+        </Link>
+      </div>
+    </div>
+  </Container>
+</section>
