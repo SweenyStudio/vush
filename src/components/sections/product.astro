@@ -4,75 +4,61 @@ import {Image} from "astro:assets";
 import BackgroundMobile from "@assets/How-To-Play-Mobile-04.webp";
 import BackgroundDesktop from "@assets/How-To-Play-Desktop-03.webp";
 import Link from "@components/ui/link.astro";
-
-import ActivityCards from "@assets/usps/activity-cards.webp";
-import DeeperConnection from "@assets/usps/deeper-connection.webp";
-import FreeShipping from "@assets/usps/free-shipping.webp";
-import Spice from "@assets/usps/spice.webp";
-
-const usps = [
-  {
-    name: "100 Activity Cards",
-    icon: ActivityCards,
-  },
-  {
-    name: "Deeper Connection",
-    icon: DeeperConnection,
-  },
-  {
-    name: "Spice Up Your Relationship",
-    icon: Spice,
-  },
-  {
-    name: "Free Shipping",
-    icon: FreeShipping,
-  },
-];
 ---
 
-<section id="product" class="relative lg:py-36 xl:py-48">
+<section id="product" class="relative md:py-24 lg:py-36 xl:py-48">
   <Image
-    class="absolute inset-0 w-full h-full object-cover object-center -z-10"
+    class="md:hidden absolute w-full h-full object-cover object-center -z-10"
+    alt="Background"
+    src={BackgroundMobile}
+  />
+  <Image
+    class="md:absolute hidden inset-0 w-full h-full object-cover object-center -z-10"
     alt="Background"
     src={BackgroundDesktop}
   />
+
   <Container>
-    <div class="grid grid-cols-2 gap-12">
-      <div class="col-start-2 pl-12 overflow-hidden relative">
-        <h3 class="text-6xl font-medium tracking-tight font-clearface">
+    <div class="md:grid md:grid-cols-2 gap-12 md:pt-0 pt-96">
+      <div class="md:col-start-2 md:pl-12 overflow-hidden relative">
+        <h3
+          class="md:text-6xl text-3xl font-medium tracking-tight font-clearface"
+        >
           Get Started With Your Connection Challenges
         </h3>
         <div
-          class="flex flex-row justify-between items-center mt-8 border-b border-neutral-400"
+          class="flex flex-row justify-between items-center mt-2 md:mt-8 border-b border-neutral-400"
         >
           <div class="flex flex-col gap-y-1 py-4">
-            <p class="text-2xl">Connection Challenges Pack</p>
-            <p class="text-lg text-neutral-600">100 Couples Activity Cards</p>
+            <p class="text-md md:text-2xl">Connection Challenges Pack</p>
+            <p class="text-sm md:text-lg text-neutral-600">
+              100 Couples Activity Cards
+            </p>
           </div>
-          <div class="flex flex-row items-center gap-x-4">
-            <p class="text-2xl opacity-40 line-through">$79.99</p>
-            <p class="text-2xl">$59.99</p>
+          <div class="flex flex-row items-center gap-x-2 md:gap-x-4">
+            <p class="text-md md:text-2xl opacity-40 line-through">$79.99</p>
+            <p class="text-md md:text-2xl">$59.99</p>
           </div>
         </div>
         <div
-          class="flex flex-row justify-between items-center border-b border-neutral-400"
+          class="flex flex-row justify-between items-center mt-2 md:mt-8 border-b border-neutral-400"
         >
           <div class="flex flex-col gap-y-1 py-4">
-            <p class="text-2xl">Next-Day Delivery</p>
-            <p class="text-lg text-neutral-600">Express Shipping</p>
+            <p class="text-md md:text-2xl">Next-Day Delivery</p>
+            <p class="text-sm md:text-lg text-neutral-600">Express Shipping</p>
           </div>
           <div class="flex flex-row items-center gap-x-4">
-            <p class="text-2xl opacity-40 line-through">$29.99</p>
-            <p class="text-2xl">Free</p>
+            <p class="text-md md:text-2xl opacity-40 line-through">$29.99</p>
+            <p class="text-md md:text-2xl">Free</p>
           </div>
         </div>
-        <div class="flex flex-row justify-between items-center mt-8">
+        <div class="flex flex-row justify-between items-center mt-2 md:mt-8">
           <div class="flex flex-col gap-y-1 py-4">
-            <p class="text-2xl">Total</p>
+            <p class="text-md md:text-2xl">Total</p>
           </div>
           <div class="flex flex-row items-center gap-x-4">
-            <p class="text-2xl opacity-40 line-through">$109.98</p>
-            <p class="text-2xl">$59.99</p>
+            <p class="text-md md:text-2xl opacity-40 line-through">$109.98</p>
+            <p class="text-md md:text-2xl">$59.99</p>
           </div>
         </div>
         <Link

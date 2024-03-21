@@ -7,5 +7,14 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   integrations: [tailwind(), alpinejs()],
   output: "server",
-  adapter: cloudflare()
+  adapter: cloudflare(),
+   image: {
+    // Example: Enable the Sharp-based image service with a custom config
+    service: {
+       entrypoint: 'astro/assets/services/sharp',
+       config: {
+         limitInputPixels: false,
+      },
+     },
+  },
 });
