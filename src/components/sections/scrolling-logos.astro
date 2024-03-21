@@ -1,0 +1,67 @@
+---
+import {Image} from "astro:assets";
+import Mama from "@assets/logos/LOGO-MAMA.webp";
+import Mc from "@assets/logos/LOGO-MC.webp";
+import Ptv from "@assets/logos/LOGO-PTV.webp";
+import Rs from "@assets/logos/LOGO-RS.webp";
+import Vice from "@assets/logos/LOGO-VICE.webp";
+import Vogue from "@assets/logos/LOGO-VOGUE.webp";
+import Vulture from "@assets/logos/LOGO-VULTURE.webp";
+const Logos = [
+  {
+    src: Mama,
+    alt: "Mama",
+  },
+  {
+    src: Mc,
+    alt: "Mc",
+  },
+  {
+    src: Ptv,
+    alt: "Ptv",
+  },
+  {
+    src: Rs,
+    alt: "Rs",
+  },
+  {
+    src: Vice,
+    alt: "Vice",
+  },
+  {
+    src: Vogue,
+    alt: "Vogue",
+  },
+  {
+    src: Vulture,
+    alt: "Vulture",
+  },
+];
+---
+
+<div class="relative flex overflow-x-hidden py-2 group bg-vushGray">
+  <div
+    class="motion-safe:animate-marquee justify-around w-auto py-2 overflow-x-auto flex flex-nowrap min-w-full shrink-0 items-center snap-x snap-mandatory"
+  >
+    {
+      Logos.map((logo) => (
+        <Image
+          {...logo}
+          class="w-auto h-12 max-w-md flex flex-col justify-between snap-start snap-always shrink-0 px-2"
+        />
+      ))
+    }
+  </div>
+  <div
+    class="motion-safe:animate-marquee justify-around w-auto py-2 overflow-x-auto flex flex-nowrap min-w-full shrink-0 items-center snap-x snap-mandatory"
+  >
+    {
+      Logos.map((logo) => (
+        <Image
+          {...logo}
+          class="w-auto h-12 max-w-md flex flex-col justify-between snap-start snap-always shrink-0 px-2"
+        />
+      ))
+    }
+  </div>
+</div>
