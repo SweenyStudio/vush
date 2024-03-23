@@ -102,8 +102,7 @@ const ugc = [
                             <div class=" h-96 w-72 object-cover md:h-full md:w-full">
                                 <video
                                     class="h-full w-full rounded-lg object-cover"
-                                    poster={video.poster}
-                                    loading="eager"
+                                    poster={video.poster.src}
                                     autoplay
                                     loop
                                     plays-inline
@@ -134,7 +133,7 @@ const ugc = [
     </Container>
 </section>
 
-<script type="module">
+<script type="module" is:inline>
     document.addEventListener("DOMContentLoaded", () => {
         // Select all scroll containers
         const scrollContainers = document.querySelectorAll(
