@@ -1,0 +1,42 @@
+---
+import Container from "@components/ui/container.astro";
+import Chilli1 from "@assets/tiers/ROUND GIF 1CHILI_1.gif";
+import Chilli2 from "@assets/tiers/ROUND GIF 2CHILI_1.gif";
+import Chilli3 from "@assets/tiers/ROUND GIF 3CHILI_1.gif";
+import {Image} from "astro:assets";
+
+const tiers = [
+  {
+    title: "Single Chili 🌶️",
+    description: "Tame - Date nights, fun activities and intimacy prompts",
+    image: Chilli1,
+  },
+  {
+    title: "Double Chili 🌶️🌶️",
+    description: "Dial Up The Heat - Time to get a little spicier",
+    image: Chilli2,
+  },
+  {
+    title: "Triple Chili 🌶️🌶️🌶️",
+    description: "Extra Adventurous - Hot bedroom antics and adventures",
+    image: Chilli3,
+  },
+];
+---
+
+<Container>
+  <h3 class="text-3xl md:text-6xl font-medium tracking-tight font-clearface">
+    Our 3 Tiered Spice-O-Meter
+  </h3>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+    {
+      tiers.map((tier) => (
+        <div class="flex flex-col items-center justify-center text-center ">
+          <Image src={tier.image} alt={tier.title} class="w-4/5 h-full px-12" />
+          <h4 class=" font-clearface text-3xl uppercase mt-6 ">{tier.title}</h4>
+          <p class="mt-2 text-lg">{tier.description}</p>
+        </div>
+      ))
+    }
+  </div>
+</Container>

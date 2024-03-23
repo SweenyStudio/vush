@@ -34,69 +34,71 @@ const reviews = [
 ];
 ---
 
-<Container>
-  <div class="flex-col flex md:grid md:grid-cols-3 items-center md:gap-x-12">
-    <div
-      class="flex flex-row justify-center gap-x-4 items-center md:col-span-1 md:items-start w-full md:gap-y-1 md:flex-col"
-    >
-      <div class="flex flex-row gap-x-0.5 justify-center">
-        {
-          Array.from({length: 5}).map((_, index) => (
-            <svg
-              width="15"
-              height="15"
-              viewBox="0 0 15 15"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              class="w-4 h-4 md:h-8 md:w-8 text-vushOrangeDark"
-            >
-              <path
-                d="M7.22303 0.665992C7.32551 0.419604 7.67454 0.419604 7.77702 0.665992L9.41343 4.60039C9.45663 4.70426 9.55432 4.77523 9.66645 4.78422L13.914 5.12475C14.18 5.14607 14.2878 5.47802 14.0852 5.65162L10.849 8.42374C10.7636 8.49692 10.7263 8.61176 10.7524 8.72118L11.7411 12.866C11.803 13.1256 11.5206 13.3308 11.2929 13.1917L7.6564 10.9705C7.5604 10.9119 7.43965 10.9119 7.34365 10.9705L3.70718 13.1917C3.47945 13.3308 3.19708 13.1256 3.25899 12.866L4.24769 8.72118C4.2738 8.61176 4.23648 8.49692 4.15105 8.42374L0.914889 5.65162C0.712228 5.47802 0.820086 5.14607 1.08608 5.12475L5.3336 4.78422C5.44573 4.77523 5.54342 4.70426 5.58662 4.60039L7.22303 0.665992Z"
-                fill="currentColor"
-              />
-            </svg>
-          ))
-        }
-      </div>
-      <p class="text-sm md:text-xl md:w-full">
-        <span class="underline underline-offset-4">1,500+</span> Verified 5-Star
-        Reviews
-      </p>
-    </div>
-    <div
-      id="carousel"
-      class="relative w-full md:col-span-2"
-      data-carousel="slide"
-    >
-      <!-- Carousel wrapper -->
-      <div class="relative h-44 overflow-hidden rounded-lg md:h-54">
-        {
-          reviews.map((review) => (
-            <div
-              class="hidden duration-700 ease-in-out "
-              data-carousel-item="active"
-            >
-              <div
-                class={`absolute inset-0 flex items-center justify-center w-full h-full transform transition-all duration-700 ease-in-out`}
+<section class="bg-white">
+  <Container>
+    <div class="flex-col flex md:grid md:grid-cols-3 items-center md:gap-x-12">
+      <div
+        class="flex flex-row justify-center gap-x-4 items-center md:col-span-1 md:items-start w-full md:gap-y-1 md:flex-col"
+      >
+        <div class="flex flex-row gap-x-0.5 justify-center">
+          {
+            Array.from({length: 5}).map((_, index) => (
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 15 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4 md:h-8 md:w-8 text-vushOrangeDark"
               >
-                <div class="flex flex-col items-center justify-center space-y-4">
-                  <p class="text-md md:text-2xl italic text-center">
-                    {review.review}
-                  </p>
-                  <div class="flex items-center justify-center space-x-2">
-                    <span class="text-sm md:text-lg text-neutral-500 ">
-                      {review.name}
-                    </span>
-                    <span class="text-sm md:text-lg text-neutral-500">
-                      {review.date}
-                    </span>
+                <path
+                  d="M7.22303 0.665992C7.32551 0.419604 7.67454 0.419604 7.77702 0.665992L9.41343 4.60039C9.45663 4.70426 9.55432 4.77523 9.66645 4.78422L13.914 5.12475C14.18 5.14607 14.2878 5.47802 14.0852 5.65162L10.849 8.42374C10.7636 8.49692 10.7263 8.61176 10.7524 8.72118L11.7411 12.866C11.803 13.1256 11.5206 13.3308 11.2929 13.1917L7.6564 10.9705C7.5604 10.9119 7.43965 10.9119 7.34365 10.9705L3.70718 13.1917C3.47945 13.3308 3.19708 13.1256 3.25899 12.866L4.24769 8.72118C4.2738 8.61176 4.23648 8.49692 4.15105 8.42374L0.914889 5.65162C0.712228 5.47802 0.820086 5.14607 1.08608 5.12475L5.3336 4.78422C5.44573 4.77523 5.54342 4.70426 5.58662 4.60039L7.22303 0.665992Z"
+                  fill="currentColor"
+                />
+              </svg>
+            ))
+          }
+        </div>
+        <p class="text-sm md:text-xl md:w-full">
+          <span class="underline underline-offset-4">1,500+</span> Verified 5-Star
+          Reviews
+        </p>
+      </div>
+      <div
+        id="carousel"
+        class="relative w-full md:col-span-2"
+        data-carousel="slide"
+      >
+        <!-- Carousel wrapper -->
+        <div class="relative h-44 overflow-hidden rounded-lg md:h-54">
+          {
+            reviews.map((review) => (
+              <div
+                class="hidden duration-700 ease-in-out "
+                data-carousel-item="active"
+              >
+                <div
+                  class={`absolute inset-0 flex items-center justify-center w-full h-full transform transition-all duration-700 ease-in-out`}
+                >
+                  <div class="flex flex-col items-center justify-center space-y-4">
+                    <p class="text-md md:text-2xl italic text-center">
+                      {review.review}
+                    </p>
+                    <div class="flex items-center justify-center space-x-2">
+                      <span class="text-sm md:text-lg text-neutral-500 ">
+                        {review.name}
+                      </span>
+                      <span class="text-sm md:text-lg text-neutral-500">
+                        {review.date}
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))
-        }
+            ))
+          }
+        </div>
       </div>
     </div>
-  </div>
-</Container>
+  </Container>
+</section>
