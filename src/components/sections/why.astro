@@ -1,0 +1,108 @@
+---
+import Container from "@components/ui/container.astro";
+import UGC01 from "@assets/ugc/CARD-UGC-01.webp";
+import UGC02 from "@assets/ugc/CARD-UGC-02.webp";
+import UGC04 from "@assets/ugc/CARD-UGC-04.webp";
+import UGC07 from "@assets/ugc/CARD-UGC-07.webp";
+import {Image} from "astro:assets";
+
+const reasons = [
+  {
+    image: UGC04,
+    title: "The Perfect Date Night Activity",
+    description:
+      "Our connection challenges are the perfect way to spend a night in with your partner. They're fun, engaging, and will help you grow closer together.",
+  },
+  {
+    image: UGC01,
+    title: "Never Run Out Of Challenges",
+    description:
+      "With 100 different challenges to choose from, you'll never get bored. Our challenges are designed to keep things fresh and exciting.",
+  },
+  {
+    image: UGC02,
+    title: "The Perfect 'I Love you' Gift",
+    description:
+      "Our challenges are designed to help you learn more about your partner and grow closer together.",
+  },
+  {
+    image: UGC07,
+    title: "Great For Long-Distance Relationships",
+    description:
+      "If you're in a long-distance relationship, our connection challenges are the perfect way to stay connected and have fun together.",
+  },
+];
+---
+
+<section class="py-16">
+  <Container>
+    <h3 class="text-3xl md:text-6xl font-medium tracking-tight font-clearface">
+      Why Does Everyone Love Our Connection Challenges?
+    </h3>
+    <div
+      class="scroll-container scrollbar-hide items-start flex flex-row flex-nowrap flex-shrink-0 overflow-x-scroll snap-proximity snap-x relative"
+      data-scroll-container
+    >
+      <div
+        class="flex flex-row py-8 snap-x snap-mandatory items-start md:grid md:grid-cols-4 gap-6 md:w-full"
+      >
+        {
+          reasons.map((reason) => (
+            <div class="flex flex-col items-start text-start justify-center w-72 md:w-full ">
+              <Image
+                src={reason.image}
+                alt={reason.title}
+                class="md:h-[60vh] h-96  object-cover object-center"
+              />
+              <h4 class="text-xl md:text-2xl font-medium mt-4">
+                {reason.title}
+              </h4>
+              <p class="md:text-lg mt-2 tracking-tight">{reason.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+    <div
+      class="progress-bar bg-neutral-300 h-1.5 w-full rounded-full md:hidden"
+      data-progress-container
+    >
+      <div
+        class="progress bg-gradient-to-r from-vushOrange via-vushYellow to-vushGreen h-1.5 w-0 rounded-full"
+        data-progress-bar
+      >
+      </div>
+    </div>
+  </Container>
+</section>
+
+<script type="module">
+  document.addEventListener("DOMContentLoaded", () => {
+    // Select all scroll containers
+    const scrollContainers = document.querySelectorAll(
+      "[data-scroll-container]"
+    );
+
+    scrollContainers.forEach((scrollContainer) => {
+      // For each scroll container, find its corresponding progress bar
+      const progressBar = scrollContainer.nextElementSibling.querySelector(
+        "[data-progress-bar]"
+      );
+
+      if (!progressBar) {
+        console.error("Progress bar not found for a scroll container");
+        return;
+      }
+
+      const updateProgressBar = () => {
+        const scrollWidth =
+          scrollContainer.scrollWidth - scrollContainer.clientWidth;
+        const scrollLeft = scrollContainer.scrollLeft;
+        const scrollPercent = (scrollLeft / scrollWidth) * 100;
+        progressBar.style.width = `${scrollPercent}%`;
+      };
+
+      scrollContainer.addEventListener("scroll", updateProgressBar);
+    });
+  });
+</script>
