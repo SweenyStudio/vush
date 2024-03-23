@@ -2,12 +2,35 @@
 import Container from "@components/ui/container.astro";
 import {Image} from "astro:assets";
 import MainFeatureUGC from "@assets/CARD-UGC-05.webp";
+import MoonIcon from "@assets/usps/100CC-05@2x.png";
+import ChilliIcon from "@assets/usps/100CC-06@2x.png";
+import RocketIcon from "@assets/usps/100CC-07@2x.png";
+import FireIcon from "@assets/usps/100CC-08@2x.png";
+
+const usps = [
+  {
+    icon: MoonIcon,
+    title: "Strengthen Your Relationship",
+  },
+  {
+    icon: ChilliIcon,
+    title: "3 Levels Of Spice",
+  },
+  {
+    icon: RocketIcon,
+    title: "Free Next-Day Delivery",
+  },
+  {
+    icon: FireIcon,
+    title: "100 Different Challenges",
+  },
+];
 ---
 
 <section class="bg-vushGray">
   <Container>
     <div
-      class="flex-col flex md:grid md:grid-cols-3 items-start md:gap-x-12 py-8"
+      class="flex-col flex md:grid md:grid-cols-3 items-start md:gap-x-12 pt-8"
     >
       <div class="flex flex-col justify-between items-start md:py-16 md:pr-10">
         <h3
@@ -34,6 +57,24 @@ import MainFeatureUGC from "@assets/CARD-UGC-05.webp";
           class="md:p-16"
         />
       </div>
+    </div>
+    <div
+      class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-12 py-8 md:py-0 md:pb-8"
+    >
+      {
+        usps.map((usp) => (
+          <div class="flex flex-row items-center justify-center gap-x-2 ">
+            <Image
+              src={usp.icon}
+              alt="icon"
+              class="w-12 md:w-16 h-12 md:h-16"
+            />
+            <p class="text-md md:text-2xl text-start tracking-tight leading-tight">
+              {usp.title}
+            </p>
+          </div>
+        ))
+      }
     </div>
   </Container>
 </section>

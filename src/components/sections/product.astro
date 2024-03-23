@@ -8,13 +8,14 @@ import Link from "@components/ui/link.astro";
 
 <section id="product" class="relative md:py-24 lg:py-36 xl:py-48">
   <Image
-    class="md:hidden absolute w-full h-full object-cover object-center -z-10"
-    alt="Background"
+    class="md:hidden absolute block w-full h-full object-cover object-center -z-10"
+    alt="Background Mobile"
     src={BackgroundMobile}
   />
+
   <Image
-    class="md:absolute hidden inset-0 w-full h-full object-cover object-center -z-10"
-    alt="Background"
+    class="md:absolute hidden md:block inset-0 w-full h-full object-cover object-center -z-10"
+    alt="Background Desktop"
     src={BackgroundDesktop}
   />
 
@@ -39,7 +40,7 @@ import Link from "@components/ui/link.astro";
           </div>
         </div>
         <div
-          class="flex flex-row justify-between items-center md:mt-8 border-b border-neutral-400"
+          class="flex flex-row justify-between items-center border-b border-neutral-400"
         >
           <div class="flex flex-col gap-y-1 py-4">
             <p class="text-md md:text-2xl">Next-Day Delivery</p>
@@ -50,7 +51,7 @@ import Link from "@components/ui/link.astro";
             <p class="text-md md:text-2xl">Free</p>
           </div>
         </div>
-        <div class="flex flex-row justify-between items-center mt-2 md:mt-8">
+        <div class="flex flex-row justify-between items-center mt-2 md:mt-4">
           <div class="flex flex-col gap-y-1 py-4">
             <p class="text-md md:text-2xl">Total</p>
           </div>
