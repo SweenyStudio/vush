@@ -1,0 +1,167 @@
+---
+import Container from "@components/ui/container.astro";
+import { Image } from "astro:assets";
+import MainFeatureUGC from "@assets/CARD-UGC-05.webp";
+import MoonIcon from "@assets/usps/100CC-05@2x.png";
+import ChilliIcon from "@assets/usps/100CC-06@2x.png";
+import RocketIcon from "@assets/usps/100CC-07@2x.png";
+import FireIcon from "@assets/usps/100CC-08@2x.png";
+import Link from "@components/ui/link.astro";
+import StarRating from "@components/ui/star-rating.astro";
+import UGC1 from "@assets/ugc-placeholder/1.mp4";
+import UGC2 from "@assets/ugc-placeholder/2.mp4";
+import UGC3 from "@assets/ugc-placeholder/3.mp4";
+import UGC1Poster from "@assets/ugc-placeholder/1.webp";
+import UGC2Poster from "@assets/ugc-placeholder/2.webp";
+import UGC3Poster from "@assets/ugc-placeholder/3.webp";
+
+const usps = [
+    {
+        icon: MoonIcon,
+        title: "Strengthen Your Relationship",
+    },
+    {
+        icon: ChilliIcon,
+        title: "3 Levels Of Spice",
+    },
+    {
+        icon: RocketIcon,
+        title: "Free Next-Day Delivery",
+    },
+    {
+        icon: FireIcon,
+        title: "100 Different Challenges",
+    },
+];
+
+const ugc = [
+    {
+        video: UGC1,
+        poster: UGC1Poster,
+        alt: "Connection Challenges Saved My Relationship",
+    },
+    {
+        video: UGC2,
+        poster: UGC2Poster,
+        alt: "Connection Challenges is so fun to play",
+    },
+    {
+        video: UGC3,
+        poster: UGC3Poster,
+        alt: "Connection Challenges is the best",
+    },
+];
+---
+
+<section class="bg-white">
+    <Container>
+        <div
+            class="items-start pt-8 md:grid md:grid-cols-3 md:flex-col md:gap-x-12"
+        >
+            <div
+                class="flex flex-col items-start justify-between md:py-16 md:pr-10"
+            >
+                <StarRating />
+                <h3
+                    class="font-clearface mt-6 text-3xl font-medium tracking-tight md:text-6xl"
+                >
+                    See What People Are Saying About Connection Challenges
+                </h3>
+
+                <Link
+                    class="md:px-18 group mt-4 flex w-fit items-center justify-center gap-x-2 text-lg md:py-5 md:text-xl"
+                    href="https://au.vushstimulation.com/pages/reviews"
+                    style="outline"
+                    >See More Reviews
+                    <span
+                        ><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            class="translate-all h-5 w-5 duration-300 group-hover:translate-x-2"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"></path>
+                        </svg>
+                    </span>
+                </Link>
+            </div>
+            <div
+                class="scroll-container scrollbar-hide relative col-span-2 flex flex-shrink-0 snap-x snap-proximity flex-row flex-nowrap items-start overflow-x-scroll"
+                data-scroll-container
+            >
+                <div
+                    class="flex snap-x snap-mandatory flex-row items-start gap-6 py-8 md:grid md:w-full md:grid-cols-3"
+                >
+                    {
+                        ugc.map((video) => (
+                            <div class=" h-96 w-72 object-cover md:h-full md:w-full">
+                                <video
+                                    class="h-full w-full rounded-lg object-cover"
+                                    poster={video.poster}
+                                    loading="eager"
+                                    autoplay
+                                    loop
+                                    plays-inline
+                                    muted
+                                    preload="none"
+                                >
+                                    <source
+                                        src={video.video}
+                                        type="video/mp4"
+                                    />
+                                </video>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+            <div
+                class="progress-bar h-1.5 w-full rounded-full bg-neutral-300 md:hidden"
+                data-progress-container
+            >
+                <div
+                    class="progress from-vushOrange via-vushYellow to-vushGreen h-1.5 w-0 rounded-full bg-gradient-to-r"
+                    data-progress-bar
+                >
+                </div>
+            </div>
+        </div>
+    </Container>
+</section>
+
+<script type="module">
+    document.addEventListener("DOMContentLoaded", () => {
+        // Select all scroll containers
+        const scrollContainers = document.querySelectorAll(
+            "[data-scroll-container]",
+        );
+
+        scrollContainers.forEach((scrollContainer) => {
+            // For each scroll container, find its corresponding progress bar
+            const progressBar =
+                scrollContainer.nextElementSibling.querySelector(
+                    "[data-progress-bar]",
+                );
+
+            if (!progressBar) {
+                console.error("Progress bar not found for a scroll container");
+                return;
+            }
+
+            const updateProgressBar = () => {
+                const scrollWidth =
+                    scrollContainer.scrollWidth - scrollContainer.clientWidth;
+                const scrollLeft = scrollContainer.scrollLeft;
+                const scrollPercent = (scrollLeft / scrollWidth) * 100;
+                progressBar.style.width = `${scrollPercent}%`;
+            };
+
+            scrollContainer.addEventListener("scroll", updateProgressBar);
+        });
+    });
+</script>

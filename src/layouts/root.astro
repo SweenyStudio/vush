@@ -1,86 +1,87 @@
 ---
-import {SEO} from "astro-seo";
+import { SEO } from "astro-seo";
 import Navbar from "@components/sections/navbar.astro";
 const GA4MeasurementId = "G-YOUR_MEASUREMENT_ID";
 
 interface Props {
-  seoTitle?: string;
-  seoDescription?: string;
+    seoTitle?: string;
+    seoDescription?: string;
 }
 
-const {seoTitle, seoDescription} = Astro.props;
+const { seoTitle, seoDescription } = Astro.props;
 ---
 
 <html lang="en" class="scroll-smooth">
-  <head>
-    <SEO
-      title={seoTitle ? seoTitle : "This is your landing page SEO title"}
-      description={seoDescription
-        ? seoDescription
-        : "This is your landing page SEO description"}
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <head>
+        <SEO
+            title={seoTitle ? seoTitle : "This is your landing page SEO title"}
+            description={seoDescription
+                ? seoDescription
+                : "This is your landing page SEO description"}
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style is:global>
-      /* CSS Fonts here */
-      @font-face {
-        font-family: "Clearface";
-        src: url("/fonts/ClearfaceStd-Regular.woff2") format("woff2");
-        font-weight: 400;
-        font-style: normal;
-      }
-      @font-face {
-        font-family: "Karla";
-        src: url("fonts/Karla-VariableFont_wght.ttf") format("truetype");
-        font-weight: 100 900;
-        font-style: normal;
-      }
-      @font-face {
-        font-family: "Karla";
-        src: url("fonts/Karla-Italic-VariableFont_wght.ttf") format("truetype");
-        font-weight: 100 900;
-        font-style: italic;
-      }
-      /* Improve Page speed */
-      /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
-      img {
-        content-visibility: auto;
-      }
-      .scrollbar-hide::-webkit-scrollbar {
-        display: none;
-      }
-      /* For IE, Edge and Firefox */
-      .scrollbar-hide {
-        -ms-overflow-style: none; /* IE and Edge */
-        scrollbar-width: none; /* Firefox */
-      }
-    </style>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <style is:global>
+            /* CSS Fonts here */
+            @font-face {
+                font-family: "Clearface";
+                src: url("/fonts/ClearfaceStd-Regular.woff2") format("woff2");
+                font-weight: 400;
+                font-style: normal;
+            }
+            @font-face {
+                font-family: "Karla";
+                src: url("fonts/Karla-VariableFont_wght.ttf") format("truetype");
+                font-weight: 100 900;
+                font-style: normal;
+            }
+            @font-face {
+                font-family: "Karla";
+                src: url("fonts/Karla-Italic-VariableFont_wght.ttf")
+                    format("truetype");
+                font-weight: 100 900;
+                font-style: italic;
+            }
+            /* Improve Page speed */
+            /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
+            img {
+                content-visibility: auto;
+            }
+            .scrollbar-hide::-webkit-scrollbar {
+                display: none;
+            }
+            /* For IE, Edge and Firefox */
+            .scrollbar-hide {
+                -ms-overflow-style: none; /* IE and Edge */
+                scrollbar-width: none; /* Firefox */
+            }
+        </style>
 
-    <script
-      async
-      src=`https://www.googletagmanager.com/gtag/js?id=${GA4MeasurementId}`
-      is:inline></script>
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+        <script
+            async
+            src=`https://www.googletagmanager.com/gtag/js?id=${GA4MeasurementId}`
+            is:inline></script>
+        <script is:inline>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
 
-      gtag("config", `${GA4MeasurementId}`);
-    </script>
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"
-      rel="stylesheet"
-    />
-  </head><body class="relative overscroll-none font-karla">
-    <slot />
-    <script
-      is:inline
-      src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"
-    ></script>
-  </body>
+            gtag("config", `${GA4MeasurementId}`);
+        </script>
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"
+            rel="stylesheet"
+        />
+    </head><body class="font-karla relative overscroll-none scroll-smooth">
+        <slot />
+        <script
+            is:inline
+            src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"
+        ></script>
+    </body>
 </html>
