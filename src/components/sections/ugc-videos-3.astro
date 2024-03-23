@@ -13,6 +13,7 @@ import UGC2 from "@assets/ugc-placeholder/2.mp4";
 import UGC3 from "@assets/ugc-placeholder/3.mp4";
 import UGC1Poster from "@assets/ugc-placeholder/1.webp";
 import UGC2Poster from "@assets/ugc-placeholder/2.webp";
+import Header from "@components/ui/header.astro";
 import UGC3Poster from "@assets/ugc-placeholder/3.webp";
 
 const usps = [
@@ -62,11 +63,11 @@ const ugc = [
                 class="flex flex-col items-start justify-between md:py-16 md:pr-10"
             >
                 <StarRating />
-                <h3
+                <Header
                     class="font-clearface mt-6 text-3xl font-medium tracking-tight md:text-6xl"
                 >
                     See What People Are Saying About Connection Challenges
-                </h3>
+                </Header>
 
                 <Link
                     class="md:px-18 group mt-4 flex w-fit items-center justify-center gap-x-2 text-lg md:py-5 md:text-xl"

@@ -4,6 +4,9 @@ import Chilli1 from "@assets/tiers/ROUND GIF 1CHILI_1.gif";
 import Chilli2 from "@assets/tiers/ROUND GIF 2CHILI_1.gif";
 import Chilli3 from "@assets/tiers/ROUND GIF 3CHILI_1.gif";
 import { Image } from "astro:assets";
+import Text from "@components/ui/text.astro";
+import Header from "@components/ui/header.astro";
+import SubHeader from "@components/ui/sub-header.astro";
 
 const tiers = [
     {
@@ -26,16 +29,12 @@ const tiers = [
 
 <section class="py-16">
     <Container>
-        <h3
-            class="font-clearface text-center text-3xl font-medium tracking-tight md:text-6xl"
-        >
-            Our 3 Tiered Spice-O-Meter
-        </h3>
-        <p class="mt-4 text-center text-lg">
+        <Header class="text-center"> Our 3 Tiered Spice-O-Meter </Header>
+        <Text class="mt-4 text-center text-lg">
             Choose your spice level and let us take care of the rest. Each tier
             comes with a unique set of activities and prompts to keep things
             interesting.
-        </p>
+        </Text>
         <div class="mt-6 grid grid-cols-1 items-start gap-12 md:grid-cols-3">
             {
                 tiers.map((tier) => (
@@ -46,10 +45,10 @@ const tiers = [
                             class="h-auto w-4/5 px-12"
                             loading="eager"
                         />
-                        <h4 class=" font-clearface mt-6 text-3xl uppercase ">
+                        <SubHeader class=" font-clearface mt-6 text-3xl uppercase ">
                             {tier.title}
-                        </h4>
-                        <p class="mt-2 text-lg">{tier.description}</p>
+                        </SubHeader>
+                        <Text class="mt-2 ">{tier.description}</Text>
                     </div>
                 ))
             }

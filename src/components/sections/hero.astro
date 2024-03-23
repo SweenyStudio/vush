@@ -1,61 +1,63 @@
 ---
-import {Image} from "astro:assets";
+import { Image } from "astro:assets";
 import Scratchy from "@assets/scratch.webp";
 import Container from "@components/ui/container.astro";
 import Link from "@components/ui/link.astro";
 ---
 
 <section class="relative pb-6 md:pb-0">
-  <video
-    src="https://sweenystudio.app/Couples%20Cards_3.mp4"
-    preload="none"
-    autoplay
-    loop
-    muted
-    playsinline
-    class="object-cover h-[30vh] md:h-[90vh] w-full object-center md:absolute md:-top-8 md:-z-10 md:inset-0"
-  ></video>
-  <div
-    class="absolute h-[50vh] md:h-[90vh] inset-0 bg-gradient-to-r from-white to-transparent opacity-0 md:opacity-[0.6] -z-10 -top-8"
-  >
-  </div>
-  <Container>
+    <video
+        src="https://sweenystudio.app/Couples%20Cards_3.mp4"
+        preload="none"
+        height={1080}
+        width={1920}
+        autoplay
+        loop
+        muted
+        playsinline
+        class="h-[30vh] w-full object-cover object-center md:absolute md:inset-0 md:-top-8 md:-z-10 md:h-[90vh]"
+    ></video>
     <div
-      class="flex flex-col justify-center md:items-start items-center text-center md:text-start mt-8 md:py-36 md:max-w-2xl"
+        class="absolute inset-0 -top-8 -z-10 h-[50vh] bg-gradient-to-r from-white to-transparent opacity-0 md:h-[90vh] md:opacity-[0.6]"
     >
-      <h1 class="text-3xl md:text-7xl font-clearface font-medium">
-        Strengthen Your Relationship with Australia's Favourite <span
-          class="underline underline-offset-4"
-        >
-          Couples Game
-        </span>
-        <p class="text-base mt-4 md:text-2xl font-karla font-normal">
-          Vush's Connection Challenges are the ultimate relationship game for
-          young couples who want to build a strong and intimate connection,
-          providing a fun and interactive way to strengthen your bond and deepen
-          your love.
-        </p>
-        <Link
-          class="items-center flex w-full md:w-fit justify-center gap-x-2 group text-lg mt-4 md:mt-12 md:px-18 md:text-xl md:py-5 font-karla"
-          href="#product"
-          >Start Playing Today
-          <span
-            ><svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-5 h-5 group-hover:translate-x-2 duration-300 translate-all"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"></path>
-            </svg>
-          </span>
-        </Link>
-      </h1>
     </div>
-  </Container>
+    <Container>
+        <div
+            class="mt-8 flex flex-col items-center justify-center text-center md:max-w-2xl md:items-start md:py-36 md:text-start"
+        >
+            <h1 class="font-clearface text-3xl font-medium md:text-7xl">
+                Strengthen Your Relationship with Australia's Favourite <span
+                    class="underline underline-offset-4"
+                >
+                    Couples Game
+                </span>
+                <p class="font-karla mt-4 text-base font-normal md:text-2xl">
+                    Vush's Connection Challenges are the ultimate relationship
+                    game for young couples who want to build a strong and
+                    intimate connection, providing a fun and interactive way to
+                    strengthen your bond and deepen your love.
+                </p>
+                <Link
+                    class="md:px-18 font-karla group mt-4 flex w-full items-center justify-center gap-x-2 text-lg md:mt-12 md:w-fit md:py-5 md:text-xl"
+                    href="#product"
+                    >Start Playing Today
+                    <span
+                        ><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            class="translate-all h-5 w-5 duration-300 group-hover:translate-x-2"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"></path>
+                        </svg>
+                    </span>
+                </Link>
+            </h1>
+        </div>
+    </Container>
 </section>
