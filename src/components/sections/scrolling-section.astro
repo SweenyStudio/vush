@@ -20,11 +20,8 @@ const { title, steps } = Astro.props;
                 class="gel flex snap-x snap-mandatory flex-row items-start gap-6 py-8"
             >
                 {
-                    steps.map((step, index) => (
-                        <div
-                            class="flex w-96 flex-col items-start justify-start gap-4 text-start"
-                            key={index}
-                        >
+                    steps.map((step) => (
+                        <div class="flex w-96 flex-col items-start justify-start gap-4 text-start">
                             <Image
                                 src={step.image}
                                 alt={step.title}

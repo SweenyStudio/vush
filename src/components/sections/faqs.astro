@@ -4,7 +4,7 @@ import AccordianWrapper from "@components/ui/accordian-wrapper.astro";
 import Container from "@components/ui/container.astro";
 import Header from "@components/ui/header.astro";
 
-const Faqs = [
+const Questions = [
     {
         title: "Do I need a partner to play?",
         content:
@@ -44,7 +44,7 @@ const Faqs = [
             <Header> Frequency Asked Questions </Header>
             <div class="h-content mt-8 grid gap-x-8">
                 {
-                    Faqs.map((faq) => (
+                    Questions.map((faq) => (
                         <Accordian title={faq.title} content={faq.content} />
                     ))
                 }
