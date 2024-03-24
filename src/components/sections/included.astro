@@ -1,0 +1,24 @@
+---
+import Header from "@components/ui/header.astro";
+import Container from "@components/ui/container.astro";
+import { Image } from "astro:assets";
+import InTheBoxMobile from "@assets/In-The-Box-Mobile-03.webp";
+import InTheBoxDesktop from "@assets/In-The-Box-Desktop-03.webp";
+---
+
+<section class="relative py-16">
+    <Container>
+        <Header class="text-center"> What's In The Box? </Header>
+    </Container>
+
+    <Image
+        src={InTheBoxMobile}
+        alt="In The Box"
+        class="absolute inset-0 top-0 -z-10 block w-full object-cover object-center md:hidden"
+    />
+    <Image
+        src={InTheBoxDesktop}
+        alt="In The Box"
+        class="inset-0 top-0 -z-10 hidden w-full object-cover object-center md:absolute md:block"
+    />
+</section>
