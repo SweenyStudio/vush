@@ -11,25 +11,25 @@ import Header from "@components/ui/header.astro";
 
 const reasons = [
     {
-        image: UGC04,
+        image: "https://sweenystudio.app/ugc%2FCARD-UGC-04.webp",
         title: "The Perfect Date Night Activity",
         description:
             "Our Connection Challenges are the perfect way to spend a night in with your partner. They're fun, engaging, and will help you grow closer together.",
     },
     {
-        image: UGC01,
+        image: "https://sweenystudio.app/ugc%2FCARD-UGC-01.webp",
         title: "Never Run Out Of Challenges",
         description:
             "With 100 different challenges to choose from, you'll never get bored. Our challenges are designed to keep things fresh and exciting.",
     },
     {
-        image: UGC02,
+        image: "https://sweenystudio.app/ugc%2FCARD-UGC-02.webp",
         title: "The Perfect 'I Love you' Gift",
         description:
             "Our cards are designed to help you learn more about your partner and grow closer together.",
     },
     {
-        image: UGC07,
+        image: "https://sweenystudio.app/ugc%2FCARD-UGC-07.webp",
         title: "Find New Ways To Connect",
         description:
             "Uncover new ways to connect with your partner and deepen your relationship. Our Connection Challenges are designed to make you think and grow together.",
@@ -50,7 +50,7 @@ const reasons = [
                 {
                     reasons.map((reason) => (
                         <div class="flex w-72 flex-col items-start justify-center text-start md:w-full ">
-                            <Image
+                            <img
                                 src={reason.image}
                                 alt={reason.title}
                                 class="h-96 object-cover object-center md:h-[60vh]"
