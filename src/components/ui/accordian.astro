@@ -1,0 +1,42 @@
+---
+import SubHeader from "@components/ui/sub-header.astro";
+import Text from "@components/ui/text.astro";
+const { title, content } = Astro.props;
+---
+
+<div
+    class="relative mx-auto h-full w-full overflow-hidden border-b border-gray-200 bg-white text-sm font-normal"
+>
+    <div x-data="{ id: $id('accordion') }" class="group cursor-pointer">
+        <button
+            @click="setActiveAccordion(id)"
+            class="flex w-full select-none items-center justify-between p-4 text-left group-hover:underline"
+        >
+            <SubHeader>{title}</SubHeader>
+            <svg
+                class="h-4 w-4 duration-200 ease-out"
+                :class="{ 'rotate-180': activeAccordion==id }"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><polyline points="6 9 12 15 18 9"></polyline></svg
+            >
+        </button>
+        <div x-show="activeAccordion==id" x-collapse x-cloak>
+            <Text class="my-4 mx-8">
+                {content}
+            </Text>
+        </div>
+    </div>
+</div>
+
+<script>
+    import Alpine from "alpinejs";
+    import collapse from "@alpinejs/collapse";
+
+    Alpine.plugin(collapse);
+</script>

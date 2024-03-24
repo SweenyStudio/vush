@@ -4,9 +4,10 @@ import { Image } from "astro:assets";
 import BackgroundMobile from "@assets/How-To-Play-Mobile-04.webp";
 import BackgroundDesktop from "@assets/How-To-Play-Desktop-03.webp";
 import Link from "@components/ui/link.astro";
+import StarRating from "@components/ui/star-rating.astro";
 ---
 
-<section id="product" class="relative md:py-24 lg:py-36 xl:py-48">
+<section class="relative md:py-24">
     <Image
         class="absolute -z-10 block h-full w-full object-cover object-center md:hidden"
         alt="Background Mobile"
@@ -22,8 +23,10 @@ import Link from "@components/ui/link.astro";
     <Container>
         <div class="gap-12 pt-96 pb-6 md:grid md:grid-cols-2 md:pt-0">
             <div class="relative overflow-hidden md:col-start-2 md:pl-12">
+                <div id="product" class="absolute -top-[200px]"></div>
+                <StarRating />
                 <h3
-                    class="font-clearface text-3xl font-medium tracking-tight md:text-6xl"
+                    class="font-clearface mt-8 text-3xl font-medium tracking-tight md:text-6xl"
                 >
                     Get Started With Your Connection Challenges
                 </h3>

@@ -1,0 +1,54 @@
+---
+import Accordian from "@components/ui/accordian.astro";
+import AccordianWrapper from "@components/ui/accordian-wrapper.astro";
+import Container from "@components/ui/container.astro";
+import Header from "@components/ui/header.astro";
+
+const Faqs = [
+    {
+        title: "Do I need a partner to play?",
+        content:
+            "Given the intimate and spicy nature of the cards, this pack IS designed for partners. However there's no rules beyond that; it could be anything from a new relationship in need of a gentle nudge to break down initial intimacy barries or a long term partnership looking to mix things up and re-ignite the spark. 2 weeks or 20 years it's never too early or too late to be exploring shaking things up in the bedroom, connection and intimacy.",
+    },
+    {
+        title: "Is the game designed to only be played one time?",
+        content:
+            "Not at all - Although the scratch off cards can only be scratched once they can be added to the back of the deck and used again later simply by turning the cards face down and choosing at random. The shake up cards - although designed to only be redeemed once in the first round - can be played over and over, you can switch each players icon to each experience the other deck.",
+    },
+    {
+        title: "What if I don't want to do the revealed challenge?",
+        content:
+            "This game is designed to be played with enthusiastic consent and open communication in mind! We encourage all players to try to be as open and curious as possible to exploring new things - however this shouldn’t come at the expense of anyones boundaries. If any of these challenges make either player feel uncomfortable, simply skip to the next card. Each of the Shake Up card packs also come with an opt out card.",
+    },
+    {
+        title: "What is the shipping time?",
+        content:
+            "Shipping time is approximately 1-3 business days Australia wide. When you order before 2pm AEST, your order will be dispatched on the same day.",
+    },
+    {
+        title: "How long does a typical game of Connection Challenges last?",
+        content:
+            "A typical game of Connection Challenges can last anywhere from 30 minutes to several hours, depending on how many challenges you choose to do and how much time you have.",
+    },
+    {
+        title: "Can I play Connection Challenges with my partner in a long-distance relationship?",
+        content:
+            "Yes! Connection Challenges is a great way to keep the spark alive in a long-distance relationship. You can play the game over video chat or phone call, and use the shake-up cards to keep things interesting. Just make sure you have a good internet connection and a private space to play.",
+    },
+];
+---
+
+<section class="py-16">
+    <Container>
+        <AccordianWrapper>
+            <Header> Frequency Asked Questions </Header>
+            <div class="h-content mt-8 grid gap-x-8">
+                {
+                    Faqs.map((faq) => (
+                        <Accordian title={faq.title} content={faq.content} />
+                    ))
+                }
+            </div>
+        </AccordianWrapper>
+    </Container>
+</section>

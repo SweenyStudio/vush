@@ -1,0 +1,10 @@
+<section
+    x-data="{
+        activeAccordion: '',
+        setActiveAccordion(id) {
+            this.activeAccordion = (this.activeAccordion == id) ? '' : id
+        }
+    }"
+>
+    <slot />
+</section>
