@@ -1,0 +1,107 @@
+---
+import Container from "@components/ui/container.astro";
+import AboutUsUGC from "@assets/CARD-UGC-06.webp";
+import Header from "@components/ui/header.astro";
+import Link from "@components/ui/link.astro";
+import SubHeader from "@components/ui/sub-header.astro";
+import Text from "@components/ui/text.astro";
+import { Image } from "astro:assets";
+
+import IGIcon from "@assets/icons/ig.webp";
+import ReviewsIcon from "@assets/icons/reviews.webp";
+import StoresIcon from "@assets/icons/stores.webp";
+
+const usps = [
+    {
+        icon: IGIcon,
+        title: "650,000+",
+        description: "Instagram VUSH Followers",
+    },
+    {
+        icon: ReviewsIcon,
+        title: "11,000+ ",
+        description: "5 Star Reviews",
+    },
+    {
+        icon: StoresIcon,
+        title: "Beauty Retailers",
+        description: "Ulta, Sephora, Saks Fifth & more",
+    },
+];
+---
+
+<section class="bg-white">
+    <Container>
+        <div
+            class="flex flex-col items-start pt-8 md:grid md:grid-cols-2 md:gap-x-12"
+        >
+            <div
+                class="flex flex-col items-start justify-between md:py-16 md:pr-10"
+            >
+                <Header
+                    class="font-clearface mt-8 text-3xl font-medium tracking-tight md:text-6xl"
+                >
+                    About VUSH
+                </Header>
+                <p class="text-md mt-4 md:text-2xl">
+                    VUSH is a leading wellness brand that wants you to love
+                    loving yourself, we're all about celebrating our bodies,
+                    prioritizing pleasure and deepening connections with
+                    yourself & others.
+                </p>
+
+                <Link
+                    class="md:px-18 group mt-4 flex w-fit items-center justify-center gap-x-2 text-lg md:py-5 md:text-xl"
+                    href="https://au.vushstimulation.com/pages/about-us"
+                    style="outline"
+                    >See About Us
+                    <span
+                        ><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            class="translate-all h-5 w-5 duration-300 group-hover:translate-x-2"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"></path>
+                        </svg>
+                    </span>
+                </Link>
+            </div>
+            <div class="col-span order-first pt-8 md:pt-0">
+                <Image
+                    src={AboutUsUGC}
+                    alt="Connection Challenges"
+                    class="md:p-16"
+                />
+            </div>
+        </div>
+        <div
+            class="grid grid-cols-1 gap-4 py-8 md:grid-cols-3 md:gap-12 md:py-0 md:pb-8"
+        >
+            {
+                usps.map((usp) => (
+                    <div class="flex flex-row items-center justify-start gap-2 md:flex-col md:justify-center ">
+                        <Image
+                            src={usp.icon}
+                            alt="icon"
+                            class="h-12 w-12 md:h-16 md:w-16"
+                        />
+                        <div class="flex flex-col items-start justify-center md:items-center">
+                            <SubHeader class="text-xl md:mt-4 md:text-3xl">
+                                {usp.title}
+                            </SubHeader>
+                            <Text class="font-medium text-neutral-600 md:text-xl ">
+                                {usp.description}
+                            </Text>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </Container>
+</section>
