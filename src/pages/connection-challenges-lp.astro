@@ -1,0 +1,84 @@
+---
+import Root from "@layouts/root.astro";
+import Hero from "@components/sections/hero.astro";
+import Navbar from "@components/sections/navbar.astro";
+import ScrollingReviews from "@components/sections/scrolling-reviews.astro";
+import ScrollingLogos from "@components/sections/scrolling-logos.astro";
+import MainFeature from "@components/sections/main-feature.astro";
+import Product from "@components/sections/product.astro";
+import Why from "@components/sections/why.astro";
+import SubFeature from "@components/sections/sub-feature.astro";
+import UGCVideos3 from "@components/sections/ugc-videos-3.astro";
+import ScrollingSection from "@components/sections/scrolling-section.astro";
+import Included from "@components/sections/included.astro";
+import About from "@components/sections/about.astro";
+import Faqs from "@components/sections/faqs.astro";
+import Footer from "@components/sections/footer.astro";
+import Step1 from "@assets/steps/1.webp";
+import Step2 from "@assets/steps/2.webp";
+import Step3 from "@assets/steps/3.webp";
+import Step4 from "@assets/steps/4.webp";
+import Step5 from "@assets/steps/5.webp";
+import Step6 from "@assets/steps/6.webp";
+import Step7 from "@assets/steps/7.webp";
+
+const Steps = [
+  {
+    image: Step1,
+    title: "Grab Your Challenge Companion",
+    description:
+      "Whether a casual partner, together for 2 weeks, 2 years, or a lifetime, the VUSH Challenge is built for any kind of intimacy level. So grab that partner, and let's get spicy. ",
+  },
+  {
+    image: Step2,
+    title: "Set The Scene",
+    description:
+      "Dedicate time for each other (we like to think of this as the perfect date night activity). Create a cozy or sensually stimulating environment, as the mood suggests. Pour yourselves a drink and switch on that ambient lighting.",
+  },
+  {
+    image: Step3,
+    title: "Shake It Up",
+    description: `Begin your challenge by each taking your personalised deck of 15 'Shake Up' cards – keep your cards a secret from your partner, as each deck is different! Familiarise yourself with your new arsenal, so you'll know a good opportunity to "shake things up" when you see it.`,
+  },
+  {
+    image: Step4,
+    title: "Choose Your Challenge",
+    description:
+      "Gauge your current vibe and pick a card spice level that resonates. Anticipate the thrill as you scratch and reveal your joint mission.",
+  },
+  {
+    image: Step5,
+    title: "Indulge In The Moment",
+    description:
+      "Embrace the challenge with an open heart and mind. Whether it's a giggle-inducing game or a path to passion, savour every second.",
+  },
+  {
+    image: Step6,
+    title: "Document & Share Your Adventure",
+    description: `Just had the date of a lifetime? Or made a big mess in the kitchen? Take a pic and upload it to your story and tag our <a href="https://www.instagram.com/vush_official/" target="_blank" title="https://www.instagram.com/vush_official/">@vush_official</a> Instagram for a re-share (Let's keep things PG!)`,
+  },
+  {
+    image: Step7,
+    title: "Consent & Comfort",
+    description:
+      "Always our top priority. The VUSH Challenge is your playground of positivity, crafted with enthusiastic consent and boundary respect at its core. If a challenge doesn't resonate, simply flutter to the next card. This journey is yours to tailor, explore, and adore.",
+  },
+];
+---
+
+<Root>
+  <Navbar />
+  <Hero />
+  <ScrollingReviews />
+  <MainFeature />
+  <Why />
+  <ScrollingLogos />
+  <SubFeature />
+  <Product />
+  <UGCVideos3 />
+  <ScrollingSection title="How Do I Start The Challenge?" steps={Steps} />
+  <Included />
+  <About />
+  <Faqs />
+  <Footer />
+</Root>
