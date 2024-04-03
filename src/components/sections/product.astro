@@ -1,6 +1,6 @@
 ---
 import Container from "@components/ui/container.astro";
-import { Image } from "astro:assets";
+import {Image} from "astro:assets";
 import BackgroundMobile from "@assets/How-To-Play-Mobile-04.webp";
 import BackgroundDesktop from "@assets/How-To-Play-Desktop-03.webp";
 import Link from "@components/ui/link.astro";
@@ -8,116 +8,102 @@ import StarRating from "@components/ui/star-rating.astro";
 ---
 
 <section class="relative md:py-24">
-    <Image
-        class="absolute -z-10 block h-full w-full object-cover object-center md:hidden"
-        alt="Background Mobile"
-        src={BackgroundMobile}
-    />
+  <Image
+    class="absolute -z-10 block h-full w-full object-cover object-center md:hidden"
+    alt="Background Mobile"
+    src={BackgroundMobile}
+    loading="eager"
+  />
 
-    <Image
-        class="inset-0 -z-10 hidden h-full w-full object-cover object-center md:absolute md:block"
-        alt="Background Desktop"
-        src={BackgroundDesktop}
-    />
+  <Image
+    class="inset-0 -z-10 hidden h-full w-full object-cover object-center md:absolute md:block"
+    alt="Background Desktop"
+    src={BackgroundDesktop}
+    loading="eager"
+  />
 
-    <Container>
-        <div class="gap-12 pt-96 pb-6 md:grid md:grid-cols-2 md:pt-0">
-            <div class="relative overflow-hidden md:col-start-2 md:pl-12">
-                <div id="product" class="absolute -top-[200px]"></div>
-                <StarRating />
-                <h3
-                    class="font-clearface mt-8 text-3xl font-medium tracking-tight md:text-6xl"
-                >
-                    Get Started With Your Connection Challenges
-                </h3>
-                <div
-                    class="mt-2 flex flex-row items-center justify-between md:mt-8"
-                >
-                    <div class="flex flex-col gap-y-1 py-4">
-                        <p class="text-md md:text-2xl">
-                            Connection Challenges Pack
-                        </p>
-                        <p class="text-sm text-neutral-600 md:text-lg">
-                            100 Couples Activity Cards
-                        </p>
-                    </div>
-                    <div class="flex flex-row items-center gap-x-2 md:gap-x-4">
-                        <p class="text-md line-through opacity-40 md:text-2xl">
-                            $79.99
-                        </p>
-                        <p class="text-md md:text-2xl">$59.99</p>
-                    </div>
-                </div>
-                <div
-                    class="flex flex-row items-center justify-between border-b border-neutral-400"
-                >
-                    <div class="flex flex-col gap-y-1 py-4">
-                        <p class="text-md md:text-2xl">Next-Day Delivery</p>
-                        <p class="text-sm text-neutral-600 md:text-lg">
-                            Express Shipping
-                        </p>
-                    </div>
-                    <div class="flex flex-row items-center gap-x-4">
-                        <p class="text-md line-through opacity-40 md:text-2xl">
-                            $29.99
-                        </p>
-                        <p class="text-md md:text-2xl">Free</p>
-                    </div>
-                </div>
-                <div
-                    class="mt-2 flex flex-row items-center justify-between md:mt-4"
-                >
-                    <div class="flex flex-col gap-y-1 py-4">
-                        <p class="text-md md:text-2xl">Total</p>
-                    </div>
-                    <div class="flex flex-row items-center gap-x-4">
-                        <p class="text-md line-through opacity-40 md:text-2xl">
-                            $109.98
-                        </p>
-                        <p class="text-md md:text-2xl">$59.99</p>
-                    </div>
-                </div>
-                <Link
-                    class="md:px-18 group mt-4 flex w-full items-center justify-center gap-x-2 text-lg md:mt-12 md:py-5 md:text-xl"
-                    href="https://au.vushstimulation.com/cart/16049:1"
-                    >Buy Connection Challenges Now!
-                    <span
-                        ><svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke-width="1.5"
-                            stroke="currentColor"
-                            class="translate-all h-5 w-5 duration-300 group-hover:translate-x-2"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"></path>
-                        </svg>
-                    </span>
-                </Link>
-                <div class="mt-3 flex flex-row justify-center gap-x-6">
-                    <div class="flex flex-row items-center gap-x-2">
-                        <svg
-                            width="15"
-                            height="15"
-                            viewBox="0 0 15 15"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="h-6 w-6"
-                            ><path
-                                d="M11.4669 3.72684C11.7558 3.91574 11.8369 4.30308 11.648 4.59198L7.39799 11.092C7.29783 11.2452 7.13556 11.3467 6.95402 11.3699C6.77247 11.3931 6.58989 11.3355 6.45446 11.2124L3.70446 8.71241C3.44905 8.48022 3.43023 8.08494 3.66242 7.82953C3.89461 7.57412 4.28989 7.55529 4.5453 7.78749L6.75292 9.79441L10.6018 3.90792C10.7907 3.61902 11.178 3.53795 11.4669 3.72684Z"
-                                fill="currentColor"
-                                fill-rule="evenodd"
-                                clip-rule="evenodd"></path></svg
-                        >
-                        <p class="text-lg text-neutral-600">
-                            30-Day Money-Back Guarantee
-                        </p>
-                    </div>
-                </div>
-            </div>
+  <Container>
+    <div class="gap-12 pt-96 pb-6 md:grid md:grid-cols-2 md:pt-0">
+      <div class="relative overflow-hidden md:col-start-2 md:pl-12">
+        <div id="product" class="absolute -top-[200px]"></div>
+        <StarRating />
+        <h3
+          class="font-clearface mt-8 text-3xl font-medium tracking-tight md:text-6xl"
+        >
+          Get Started With Your Connection Challenges
+        </h3>
+        <div class="mt-2 flex flex-row items-center justify-between md:mt-8">
+          <div class="flex flex-col gap-y-1 py-4">
+            <p class="text-md md:text-2xl">Connection Challenges Pack</p>
+            <p class="text-sm text-neutral-600 md:text-lg">
+              100 Couples Activity Cards
+            </p>
+          </div>
+          <div class="flex flex-row items-center gap-x-2 md:gap-x-4">
+            <p class="text-md line-through opacity-40 md:text-2xl">$79.99</p>
+            <p class="text-md md:text-2xl">$59.99</p>
+          </div>
         </div>
-    </Container>
+        <div
+          class="flex flex-row items-center justify-between border-b border-neutral-400"
+        >
+          <div class="flex flex-col gap-y-1 py-4">
+            <p class="text-md md:text-2xl">Next-Day Delivery</p>
+            <p class="text-sm text-neutral-600 md:text-lg">Express Shipping</p>
+          </div>
+          <div class="flex flex-row items-center gap-x-4">
+            <p class="text-md line-through opacity-40 md:text-2xl">$29.99</p>
+            <p class="text-md md:text-2xl">Free</p>
+          </div>
+        </div>
+        <div class="mt-2 flex flex-row items-center justify-between md:mt-4">
+          <div class="flex flex-col gap-y-1 py-4">
+            <p class="text-md md:text-2xl">Total</p>
+          </div>
+          <div class="flex flex-row items-center gap-x-4">
+            <p class="text-md line-through opacity-40 md:text-2xl">$109.98</p>
+            <p class="text-md md:text-2xl">$59.99</p>
+          </div>
+        </div>
+        <Link
+          class="md:px-18 group mt-4 flex w-full items-center justify-center gap-x-2 text-lg md:mt-12 md:py-5 md:text-xl"
+          href="https://au.vushstimulation.com/cart/16049:1"
+          >Buy Connection Challenges Now!
+          <span
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="translate-all h-5 w-5 duration-300 group-hover:translate-x-2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"></path>
+            </svg>
+          </span>
+        </Link>
+        <div class="mt-3 flex flex-row justify-center gap-x-6">
+          <div class="flex flex-row items-center gap-x-2">
+            <svg
+              width="15"
+              height="15"
+              viewBox="0 0 15 15"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              ><path
+                d="M11.4669 3.72684C11.7558 3.91574 11.8369 4.30308 11.648 4.59198L7.39799 11.092C7.29783 11.2452 7.13556 11.3467 6.95402 11.3699C6.77247 11.3931 6.58989 11.3355 6.45446 11.2124L3.70446 8.71241C3.44905 8.48022 3.43023 8.08494 3.66242 7.82953C3.89461 7.57412 4.28989 7.55529 4.5453 7.78749L6.75292 9.79441L10.6018 3.90792C10.7907 3.61902 11.178 3.53795 11.4669 3.72684Z"
+                fill="currentColor"
+                fill-rule="evenodd"
+                clip-rule="evenodd"></path></svg
+            >
+            <p class="text-lg text-neutral-600">30-Day Money-Back Guarantee</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Container>
 </section>
