@@ -1,7 +1,7 @@
 ---
 import Container from "@components/ui/container.astro";
-import { Image } from "astro:assets";
-import MainFeatureUGC from "@assets/CARD-UGC-05.webp";
+import {Image} from "astro:assets";
+import MainFeatureUGC from "@assets/new-content/COUPLES-CHALLENGE-03.webp";
 import MoonIcon from "@assets/usps/100CC-05@2x.png";
 import ChilliIcon from "@assets/usps/100CC-06@2x.png";
 import RocketIcon from "@assets/usps/100CC-07@2x.png";
@@ -10,95 +10,93 @@ import Link from "@components/ui/link.astro";
 import Header from "@components/ui/header.astro";
 
 const usps = [
-    {
-        icon: MoonIcon,
-        title: "Strengthen Your Relationship",
-    },
-    {
-        icon: ChilliIcon,
-        title: "3 Levels Of Spice",
-    },
-    {
-        icon: RocketIcon,
-        title: "Free Next-Day Delivery",
-    },
-    {
-        icon: FireIcon,
-        title: "100 Different Challenges",
-    },
+  {
+    icon: MoonIcon,
+    title: "Strengthen Your Relationship",
+  },
+  {
+    icon: ChilliIcon,
+    title: "3 Levels Of Spice",
+  },
+  {
+    icon: RocketIcon,
+    title: "Free Next-Day Delivery",
+  },
+  {
+    icon: FireIcon,
+    title: "100 Different Challenges",
+  },
 ];
 ---
 
 <section class="bg-vushGray">
-    <Container>
-        <div
-            class="flex flex-col items-start pt-8 md:grid md:grid-cols-3 md:gap-x-12"
+  <Container>
+    <div
+      class="flex flex-col items-start pt-8 md:grid md:grid-cols-3 md:gap-x-12"
+    >
+      <div class="flex flex-col items-start justify-between md:py-16 md:pr-10">
+        <Header
+          class="font-clearface text-3xl font-medium tracking-tight md:text-6xl"
         >
-            <div
-                class="flex flex-col items-start justify-between md:py-16 md:pr-10"
-            >
-                <Header
-                    class="font-clearface text-3xl font-medium tracking-tight md:text-6xl"
-                >
-                    Ready To Level Up Your Relationship?
-                </Header>
-                <p class="text-md mt-4 md:text-2xl">
-                    Connection Challenges is designed to help you and your
-                    partner connect on a deeper level, and have fun while doing
-                    it. It’s perfect for couples who want to grow together, and
-                    build a relationship that lasts a lifetime.
-                </p>
+          Ready To Level Up Your Relationship?
+        </Header>
+        <p class="text-md mt-4 md:text-2xl">
+          Connection Challenges is designed to help you and your partner connect
+          on a deeper level, and have fun while doing it. It’s perfect for
+          couples who want to grow together, and build a relationship that lasts
+          a lifetime.
+        </p>
 
-                <p class="text-md mt-4 font-bold md:text-2xl">
-                    Simply, it's a way to build a stronger, healthier, more
-                    intimate relationship.
-                </p>
-                <Link
-                    class="md:px-18 group mt-4 flex w-fit items-center justify-center gap-x-2 text-lg md:py-5 md:text-xl"
-                    href="#product"
-                    >Start Playing Today
-                    <span
-                        ><svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke-width="1.5"
-                            stroke="currentColor"
-                            class="translate-all h-5 w-5 duration-300 group-hover:translate-x-2"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"></path>
-                        </svg>
-                    </span>
-                </Link>
-            </div>
-            <div class="col-span-2 pt-8 md:pt-0">
-                <Image
-                    src={MainFeatureUGC}
-                    alt="Connection Challenges"
-                    class="md:p-16"
-                />
-            </div>
-        </div>
-        <div
-            class="grid grid-cols-2 gap-4 py-8 md:gap-12 md:py-0 md:pb-8 lg:grid-cols-4"
-        >
-            {
-                usps.map((usp) => (
-                    <div class="flex flex-row items-center justify-center gap-x-2 ">
-                        <Image
-                            src={usp.icon}
-                            alt="icon"
-                            class="h-12 w-12 md:h-16 md:w-16"
-                        />
-                        <p class="font-clearface text-start text-base leading-tight tracking-tight md:text-2xl">
-                            {usp.title}
-                        </p>
-                    </div>
-                ))
-            }
-        </div>
-    </Container>
+        <p class="text-md mt-4 font-bold md:text-2xl">
+          Simply, it's a way to build a stronger, healthier, more intimate
+          relationship.
+        </p>
+        <Link
+          class="md:px-18 group mt-4 flex w-fit items-center justify-center gap-x-2 text-lg md:py-5 md:text-xl"
+          href="#product"
+          >Start Playing Today
+          <span
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="translate-all h-5 w-5 duration-300 group-hover:translate-x-2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"></path>
+            </svg>
+          </span>
+        </Link>
+      </div>
+      <div class="col-span-2 pt-8 md:pt-0">
+        <Image
+          src={MainFeatureUGC}
+          alt="Connection Challenges"
+          class="md:p-16"
+        />
+      </div>
+    </div>
+    <div
+      class="grid grid-cols-2 gap-4 py-8 md:gap-12 md:py-0 md:pb-8 lg:grid-cols-4"
+    >
+      {
+        usps.map((usp) => (
+          <div class="flex flex-row items-center justify-center gap-x-2 ">
+            <Image
+              src={usp.icon}
+              alt="icon"
+              class="h-12 w-12 md:h-16 md:w-16"
+            />
+            <p class="font-clearface text-start text-base leading-tight tracking-tight md:text-2xl">
+              {usp.title}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </Container>
 </section>

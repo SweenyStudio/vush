@@ -5,99 +5,98 @@ import Text from "@components/ui/text.astro";
 import Header from "@components/ui/header.astro";
 
 const reasons = [
-    {
-        image: "https://sweenystudio.app/ugc%2FCARD-UGC-04.webp",
-        title: "The Perfect Date Night Activity",
-        description:
-            "Our Connection Challenges are the perfect way to spend a night in with your partner. They're fun, engaging, and will help you grow closer together.",
-    },
-    {
-        image: "https://sweenystudio.app/ugc%2FCARD-UGC-01.webp",
-        title: "Never Run Out Of Challenges",
-        description:
-            "With 100 different challenges to choose from, you'll never get bored. Our challenges are designed to keep things fresh and exciting.",
-    },
-    {
-        image: "https://sweenystudio.app/ugc%2FCARD-UGC-02.webp",
-        title: "The Perfect 'I Love you' Gift",
-        description:
-            "Our cards are designed to help you learn more about your partner and grow closer together.",
-    },
-    {
-        image: "https://sweenystudio.app/ugc%2FCARD-UGC-07.webp",
-        title: "Find New Ways To Connect",
-        description:
-            "Uncover new ways to connect with your partner and deepen your relationship. Our Connection Challenges are designed to make you think and grow together.",
-    },
+  {
+    image: "https://sweenystudio.app/new-content%2FCOUPLES-CHALLENGE-01.jpg",
+    title: "The Perfect Date Night Activity",
+    description:
+      "Our Connection Challenges are the perfect way to spend a night in with your partner. They're fun, engaging, and will help you grow closer together.",
+  },
+  {
+    image: "https://sweenystudio.app/new-content%2FCOUPLES-CHALLENGE-04.jpg",
+    title: "Never Run Out Of Challenges",
+    description:
+      "With 100 different challenges to choose from, you'll never get bored. Our challenges are designed to keep things fresh and exciting.",
+  },
+  {
+    image: "https://sweenystudio.app/new-content%2FCOUPLES-CHALLENGE-02.jpg",
+    title: "The Perfect 'I Love you' Gift",
+    description:
+      "Our cards are designed to help you learn more about your partner and grow closer together.",
+  },
+  {
+    image: "https://sweenystudio.app/new-content%2FCOUPLES-CHALLENGE-06.jpg",
+    title: "Find New Ways To Connect",
+    description:
+      "Uncover new ways to connect with your partner and deepen your relationship. Our Connection Challenges are designed to make you think and grow together.",
+  },
 ];
 ---
 
 <section class="py-16">
-    <Container>
-        <Header> Why Does Everyone Love Our Connection Challenges? </Header>
-        <div
-            class="scroll-container scrollbar-hide relative flex flex-shrink-0 snap-x snap-proximity flex-row flex-nowrap items-start overflow-x-scroll"
-            data-scroll-container
-        >
-            <div
-                class="flex snap-x snap-mandatory flex-row items-start gap-6 py-8 md:grid md:w-full md:grid-cols-4"
-            >
-                {
-                    reasons.map((reason) => (
-                        <div class="flex w-72 flex-col items-start justify-center text-start md:w-full ">
-                            <img
-                                src={reason.image}
-                                alt={reason.title}
-                                class="h-96 object-cover object-center md:h-[60vh]"
-                            />
-                            <Subheader class=" mt-4">{reason.title}</Subheader>
-                            <Text class="mt-2 ">{reason.description}</Text>
-                        </div>
-                    ))
-                }
+  <Container>
+    <Header> Why Does Everyone Love Our Connection Challenges? </Header>
+    <div
+      class="scroll-container scrollbar-hide relative flex flex-shrink-0 snap-x snap-proximity flex-row flex-nowrap items-start overflow-x-scroll"
+      data-scroll-container
+    >
+      <div
+        class="flex snap-x snap-mandatory flex-row items-start gap-6 py-8 md:grid md:w-full md:grid-cols-4"
+      >
+        {
+          reasons.map((reason) => (
+            <div class="flex w-72 flex-col items-start justify-center text-start md:w-full ">
+              <img
+                src={reason.image}
+                alt={reason.title}
+                class="h-96 object-cover object-center md:h-[60vh]"
+              />
+              <Subheader class=" mt-4">{reason.title}</Subheader>
+              <Text class="mt-2 ">{reason.description}</Text>
             </div>
-        </div>
-        <div
-            class="progress-bar h-1.5 w-full rounded-full bg-neutral-300 md:hidden"
-            data-progress-container
-        >
-            <div
-                class="progress from-vushOrange via-vushYellow to-vushGreen h-1.5 w-0 rounded-full bg-gradient-to-r"
-                data-progress-bar
-            >
-            </div>
-        </div>
-    </Container>
+          ))
+        }
+      </div>
+    </div>
+    <div
+      class="progress-bar h-1.5 w-full rounded-full bg-neutral-300 md:hidden"
+      data-progress-container
+    >
+      <div
+        class="progress from-vushOrange via-vushYellow to-vushGreen h-1.5 w-0 rounded-full bg-gradient-to-r"
+        data-progress-bar
+      >
+      </div>
+    </div>
+  </Container>
 </section>
 
 <script type="module">
-    document.addEventListener("DOMContentLoaded", () => {
-        // Select all scroll containers
-        const scrollContainers = document.querySelectorAll(
-            "[data-scroll-container]",
-        );
+  document.addEventListener("DOMContentLoaded", () => {
+    // Select all scroll containers
+    const scrollContainers = document.querySelectorAll(
+      "[data-scroll-container]"
+    );
 
-        scrollContainers.forEach((scrollContainer) => {
-            // For each scroll container, find its corresponding progress bar
-            const progressBar =
-                scrollContainer.nextElementSibling.querySelector(
-                    "[data-progress-bar]",
-                );
+    scrollContainers.forEach((scrollContainer) => {
+      // For each scroll container, find its corresponding progress bar
+      const progressBar = scrollContainer.nextElementSibling.querySelector(
+        "[data-progress-bar]"
+      );
 
-            if (!progressBar) {
-                console.error("Progress bar not found for a scroll container");
-                return;
-            }
+      if (!progressBar) {
+        console.error("Progress bar not found for a scroll container");
+        return;
+      }
 
-            const updateProgressBar = () => {
-                const scrollWidth =
-                    scrollContainer.scrollWidth - scrollContainer.clientWidth;
-                const scrollLeft = scrollContainer.scrollLeft;
-                const scrollPercent = (scrollLeft / scrollWidth) * 100;
-                progressBar.style.width = `${scrollPercent}%`;
-            };
+      const updateProgressBar = () => {
+        const scrollWidth =
+          scrollContainer.scrollWidth - scrollContainer.clientWidth;
+        const scrollLeft = scrollContainer.scrollLeft;
+        const scrollPercent = (scrollLeft / scrollWidth) * 100;
+        progressBar.style.width = `${scrollPercent}%`;
+      };
 
-            scrollContainer.addEventListener("scroll", updateProgressBar);
-        });
+      scrollContainer.addEventListener("scroll", updateProgressBar);
     });
+  });
 </script>
