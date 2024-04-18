@@ -7,6 +7,7 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   integrations: [tailwind(), alpinejs()],
   output: "server",
-  adapter: cloudflare(),
-  imageService: "cloudflare",
+  adapter: cloudflare({
+    imageService: "cloudflare",
+  }),
 });
