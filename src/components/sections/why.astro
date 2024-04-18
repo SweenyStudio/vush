@@ -3,28 +3,35 @@ import Container from "@components/ui/container.astro";
 import Subheader from "@components/ui/sub-header.astro";
 import Text from "@components/ui/text.astro";
 import Header from "@components/ui/header.astro";
+import CouplesChallenge01 from "@assets/new-content/COUPLES-CHALLENGE-01.jpg";
+import CouplesChallenge02 from "@assets/new-content/COUPLES-CHALLENGE-02.webp";
+import CouplesChallenge04 from "@assets/new-content/COUPLES-CHALLENGE-04.jpg";
+import CouplesChallenge06 from "@assets/new-content/COUPLES-CHALLENGE-06.jpg";
+import { Image } from "astro:assets";
+
+
 
 const reasons = [
   {
-    image: "https://sweenystudio.app/new-content%2FCOUPLES-CHALLENGE-01.jpg",
+    image: CouplesChallenge01,
     title: "The Perfect Date Night Activity",
     description:
       "Our Connection Challenges are the perfect way to spend a night in with your partner. They're fun, engaging, and will help you grow closer together.",
   },
   {
-    image: "https://sweenystudio.app/new-content%2FCOUPLES-CHALLENGE-04.jpg",
+    image: CouplesChallenge04,
     title: "Never Run Out Of Challenges",
     description:
       "With 100 different challenges to choose from, you'll never get bored. Our challenges are designed to keep things fresh and exciting.",
   },
   {
-    image: "https://sweenystudio.app/new-content%2FCOUPLES-CHALLENGE-02.jpg",
+    image: CouplesChallenge02,
     title: "The Perfect 'I Love you' Gift",
     description:
       "Our cards are designed to help you learn more about your partner and grow closer together.",
   },
   {
-    image: "https://sweenystudio.app/new-content%2FCOUPLES-CHALLENGE-06.jpg",
+    image: CouplesChallenge06,
     title: "Find New Ways To Connect",
     description:
       "Uncover new ways to connect with your partner and deepen your relationship. Our Connection Challenges are designed to make you think and grow together.",
@@ -45,10 +52,11 @@ const reasons = [
         {
           reasons.map((reason) => (
             <div class="flex w-72 flex-col items-start justify-center text-start md:w-full ">
-              <img
+              <Image
                 src={reason.image}
                 alt={reason.title}
                 class="h-96 object-cover object-center md:h-[60vh]"
+                widths={[300, 600, 900, 1200, reason.image.width]}
               />
               <Subheader class=" mt-4">{reason.title}</Subheader>
               <Text class="mt-2 ">{reason.description}</Text>
