@@ -3,75 +3,68 @@ import Container from "@components/ui/container.astro";
 import StarRating from "@components/ui/star-rating.astro";
 
 const reviews = [
-    {
-        review: "My boyfriend and I played the Connection Challenges, and it was so much fun!",
-        name: "Mia L.",
-        date: "2021-01-15",
-    },
-    {
-        review: "My girlfriend and I had a blast playing the Connection Challenges. It was a great way to bond and get to know each other on a deeper level. We highly recommend it!",
-        name: "Alex J.",
-        date: "2021-02-22",
-    },
-    {
-        review: "I was a little nervous at first, but my partner and I had a great time playing the Connection Challenges.",
-        name: "Lily T.",
-        date: "2021-03-17",
-    },
-    {
-        review: " It was a great way to have fun and learn more about each other!",
-        name: "Olivia H.",
-        date: "2021-04-25",
-    },
-    {
-        review: "It was a great way to connect and learn more about each other in a fun and interactive way. We highly recommend it!",
-        name: "Zoe K.",
-        date: "2021-05-31",
-    },
+  {
+    review:
+      "My boyfriend and I played the Connection Challenges, and it was so much fun!",
+    name: "Mia L.",
+    date: "2021-01-15",
+  },
+  {
+    review:
+      "My girlfriend and I had a blast playing the Connection Challenges. It was a great way to bond and get to know each other on a deeper level. We highly recommend it!",
+    name: "Alex J.",
+    date: "2021-02-22",
+  },
+  {
+    review:
+      "I was a little nervous at first, but my partner and I had a great time playing the Connection Challenges.",
+    name: "Lily T.",
+    date: "2021-03-17",
+  },
+  {
+    review: " It was a great way to have fun and learn more about each other!",
+    name: "Olivia H.",
+    date: "2021-04-25",
+  },
+  {
+    review:
+      "It was a great way to connect and learn more about each other in a fun and interactive way. We highly recommend it!",
+    name: "Zoe K.",
+    date: "2021-05-31",
+  },
 ];
 ---
 
 <section class="bg-white">
-    <Container>
-        <div
-            class="flex flex-col items-center md:grid md:grid-cols-3 md:gap-x-12"
-        >
-            <StarRating />
+  <Container>
+    <div
+      class="flex flex-col items-center md:grid mt-6 md:grid-cols-3 md:gap-x-12"
+    >
+      <StarRating />
+      <div class="relative w-full md:col-span-2">
+        <!-- Carousel wrapper -->
+        <div class="md:h-54 relative h-44 overflow-hidden rounded-lg">
+          <div class="ease-in-out">
             <div
-                id="carousel"
-                class="relative w-full md:col-span-2"
-                data-carousel="slide"
+              class={`absolute inset-0 flex h-full w-full transform items-center justify-center transition-all duration-700 ease-in-out`}
             >
-                <!-- Carousel wrapper -->
-                <div class="md:h-54 relative h-44 overflow-hidden rounded-lg">
-                    {
-                        reviews.map((review) => (
-                            <div
-                                class="hidden duration-700 ease-in-out "
-                                data-carousel-item="active"
-                            >
-                                <div
-                                    class={`absolute inset-0 flex h-full w-full transform items-center justify-center transition-all duration-700 ease-in-out`}
-                                >
-                                    <div class="flex flex-col items-center justify-center space-y-4">
-                                        <p class="text-md text-center italic md:text-2xl">
-                                            {review.review}
-                                        </p>
-                                        <div class="flex items-center justify-center space-x-2">
-                                            <span class="text-sm text-neutral-500 md:text-lg ">
-                                                {review.name}
-                                            </span>
-                                            <span class="text-sm text-neutral-500 md:text-lg">
-                                                {review.date}
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        ))
-                    }
+              <div class="flex flex-col items-center justify-center space-y-4">
+                <p class="text-md text-center italic md:text-2xl">
+                  {reviews[1].review}
+                </p>
+                <div class="flex items-center justify-center space-x-2">
+                  <span class="text-sm text-neutral-500 md:text-lg">
+                    {reviews[1].name}
+                  </span>
+                  <span class="text-sm text-neutral-500 md:text-lg">
+                    {reviews[1].date}
+                  </span>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
-    </Container>
+      </div>
+    </div>
+  </Container>
 </section>
