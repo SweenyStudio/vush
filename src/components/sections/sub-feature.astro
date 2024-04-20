@@ -5,48 +5,49 @@ import Header from "@components/ui/header.astro";
 import SubHeader from "@components/ui/sub-header.astro";
 
 const tiers = [
-    {
-        title: "Single Chili 🌶️",
-        description: "Tame - Date nights, fun activities and intimacy prompts",
-        image: "https://sweenystudio.app/ROUND%20GIF%201CHILI_1.gif",
-    },
-    {
-        title: "Double Chili 🌶️🌶️",
-        description: "Dial Up The Heat - Time to get a little spicier",
-        image: "https://sweenystudio.app/ROUND%20GIF%202CHILI_1.gif",
-    },
-    {
-        title: "Triple Chili 🌶️🌶️🌶️",
-        description: "Extra Adventurous - Hot bedroom antics and adventures",
-        image: "https://sweenystudio.app/ROUND%20GIF%203CHILI_1.gif",
-    },
+  {
+    title: "Single Chili 🌶️",
+    description: "Tame - Date nights, fun activities and intimacy prompts",
+    image: "https://sweenystudio.app/ROUND%20GIF%201CHILI_1.gif",
+  },
+  {
+    title: "Double Chili 🌶️🌶️",
+    description: "Dial Up The Heat - Time to get a little spicier",
+    image: "https://sweenystudio.app/ROUND%20GIF%202CHILI_1.gif",
+  },
+  {
+    title: "Triple Chili 🌶️🌶️🌶️",
+    description: "Extra Adventurous - Hot bedroom antics and adventures",
+    image: "https://sweenystudio.app/ROUND%20GIF%203CHILI_1.gif",
+  },
 ];
 ---
 
 <section class="py-16">
-    <Container>
-        <Header class="text-center"> Our 3 Tiered Spice-O-Meter </Header>
-        <Text class="mt-4 text-center text-lg">
-            Choose your spice level and let us take care of the rest. Each tier
-            comes with a unique set of activities and prompts to keep things
-            interesting.
-        </Text>
-        <div class="mt-6 grid grid-cols-1 items-start gap-12 md:grid-cols-3">
-            {
-                tiers.map((tier) => (
-                    <div class="flex flex-col items-center justify-center text-center ">
-                        <img
-                            src={tier.image}
-                            alt={tier.title}
-                            class="h-auto w-4/5 px-12"
-                        />
-                        <SubHeader class=" font-clearface mt-6 text-3xl uppercase ">
-                            {tier.title}
-                        </SubHeader>
-                        <Text class="mt-2 ">{tier.description}</Text>
-                    </div>
-                ))
-            }
-        </div>
-    </Container>
+  <Container>
+    <Header class="text-center"> Our 3 Tiered Spice-O-Meter </Header>
+    <Text class="mt-4 text-center text-lg">
+      Choose your spice level and let us take care of the rest. Each tier comes
+      with a unique set of activities and prompts to keep things interesting.
+    </Text>
+    <div class="mt-6 grid grid-cols-1 items-start gap-12 md:grid-cols-3">
+      {
+        tiers.map((tier) => (
+          <div class="flex flex-col items-center justify-center text-center ">
+            <img
+              src={tier.image}
+              alt={tier.title}
+              width={1000}
+              height={1000}
+              class="h-auto w-4/5 px-12"
+            />
+            <SubHeader class=" font-clearface mt-6 text-3xl uppercase ">
+              {tier.title}
+            </SubHeader>
+            <Text class="mt-2 ">{tier.description}</Text>
+          </div>
+        ))
+      }
+    </div>
+  </Container>
 </section>
