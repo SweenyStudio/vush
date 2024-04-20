@@ -8,17 +8,17 @@ const tiers = [
   {
     title: "Single Chili 🌶️",
     description: "Tame - Date nights, fun activities and intimacy prompts",
-    image: "https://sweenystudio.app/ROUND%20GIF%201CHILI_1.gif",
+    image: "https://sweenystudio.app/chilli%2Fchilli1.mp4",
   },
   {
     title: "Double Chili 🌶️🌶️",
     description: "Dial Up The Heat - Time to get a little spicier",
-    image: "https://sweenystudio.app/ROUND%20GIF%202CHILI_1.gif",
+    image: "https://sweenystudio.app/chilli%2Fchilli2.mp4",
   },
   {
     title: "Triple Chili 🌶️🌶️🌶️",
     description: "Extra Adventurous - Hot bedroom antics and adventures",
-    image: "https://sweenystudio.app/ROUND%20GIF%203CHILI_1.gif",
+    image: "https://sweenystudio.app/chilli%2Fchilli3.mp4",
   },
 ];
 ---
@@ -34,9 +34,13 @@ const tiers = [
       {
         tiers.map((tier) => (
           <div class="flex flex-col items-center justify-center text-center ">
-            <img
+            <video
               src={tier.image}
-              alt={tier.title}
+              autoplay
+              loop
+              muted
+              playsinline
+              preload="none"
               width={1000}
               height={1000}
               class="h-auto w-4/5 px-12"

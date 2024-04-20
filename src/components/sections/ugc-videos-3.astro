@@ -74,6 +74,7 @@ const ugc = [
             ugc.map((video) => (
               <div class=" h-96 w-72 object-cover md:h-full md:w-full">
                 <video
+                  src={video.video}
                   class="h-full w-full rounded-lg object-cover"
                   poster={video.poster.src}
                   autoplay
@@ -81,9 +82,7 @@ const ugc = [
                   muted
                   playsinline
                   preload="none"
-                >
-                  <source src={video.video} type="video/mp4" />
-                </video>
+                />
               </div>
             ))
           }
