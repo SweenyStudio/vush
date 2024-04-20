@@ -17,10 +17,10 @@ export default {
           },
         },
       },
-			fontFamily: {
-				"clearface": ["Clearface", "sans-serif"],
-				"karla": ["Karla", "sans-serif"],
-			},
+			 fontFamily: {
+      'clearface': ['Clearface', 'sans-serif', 'system-ui'],
+      'karla': ['Karla', 'sans-serif', 'system-ui'],
+    },
 			colors: {
 				"vushOrange": "#ffc696",
 				"vushOrangeDark": "#ff9e5b",
