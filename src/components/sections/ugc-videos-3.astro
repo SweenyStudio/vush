@@ -75,7 +75,7 @@ const ugc = [
               <div class=" h-96 w-72 object-cover md:h-full md:w-full">
                 <video
                   src={video.video}
-                  class="h-full w-full rounded-lg object-cover"
+                  class="h-full w-full rounded-lg object-cover lazy"
                   poster={video.poster.src}
                   autoplay
                   loop
@@ -132,3 +132,7 @@ const ugc = [
     });
   });
 </script>
+
+<script
+  src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.min.js"
+></script>
