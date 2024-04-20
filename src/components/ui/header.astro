@@ -1,17 +1,17 @@
 ---
 interface Props {
-    title?: string;
-    class?: string;
+  title?: string;
+  class?: string;
 }
 
-const { class: className } = Astro.props;
+const {class: className} = Astro.props;
 ---
 
-<h1
-    class:list={[
-        className,
-        `font-clearface text-vushBlack text-3xl font-medium tracking-tight md:text-6xl`,
-    ]}
+<h2
+  class:list={[
+    className,
+    `font-clearface text-vushBlack text-3xl font-medium tracking-tight md:text-6xl`,
+  ]}
 >
-    <slot />
-</h1>
+  <slot />
+</h2>
