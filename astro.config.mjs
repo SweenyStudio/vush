@@ -5,7 +5,11 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), alpinejs(), vercel()],
+  integrations: [tailwind(), alpinejs(), ],
   output: "server",
-  adapter: vercel(),
+  adapter: vercel(
+    {
+       imageService: true,
+    }
+  ),
 });
